@@ -6,12 +6,8 @@
 <html>
 <head>
 <meta charset="GB18030">
-<title>图书明细</title>
+<title>????</title>
 <style type="text/css">
-		.tab{
-			border-collapse: collapse;
-		}
-		
 		.t_bg{background-color:#8A2BE2}
 		.t_right_bg{background-color:#FFF0F5}
 		a:link{
@@ -35,31 +31,9 @@
 <jsp:include page="title.jsp"></jsp:include>
 <!-- 内容start -->
 
-<table width="800px" height="400px"  border="2" cellspacing="1" align="center" class="head" >
-
- 	<tr height="20px" bgcolor="#ffffffff">
- 		<th width="100px">商品编号</th>
- 		<th>明细编号</th>
- 		<th>商品名称</th>
- 		<th>商品价格</th>
- 		<th>出版社</th>
- 	</tr>
- <!-- jstl进行循环 -->
-	<c:forEach items="${requestScope.book.bookInfoList}" var="cur_book">
-	 	<tr height="20px" class="head">
-	 		<td width="100px">${cur_book.prodid}</td>
-	 		<td>${cur_book.itemid}</td>
-	 		<td>${cur_book.prodname}</td>
-	 		<td>${cur_book.prodprice}</td>
-	 		<td>${cur_book.prodpress}</td>
-	 		
-	 	</tr>
-	</c:forEach>
-	<!-- <tr>
-		<td width="100px" colspan="2">&nbsp;</td>
- 		
-	</tr> -->
- </table>
+<form action="doproduct" method="post">
+	<input name="a"/><input type="submit" value="OK"/>
+</form>
  
 <!-- 内容end -->
 <jsp:include page="bottom.jsp"></jsp:include>

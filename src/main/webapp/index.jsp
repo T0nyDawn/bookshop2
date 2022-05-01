@@ -41,11 +41,11 @@
 				</tr>
 				
 				<tr>
-					<td><a href="doproduct.jsp?lb=1">计算机类</a></td>
+					<td><a href="doproduct?lb=1">计算机类</a></td>
 				</tr>
 				
 				<tr>
-					<td><a href="doproduct.jsp?lb=2">小说类</a></td>
+					<td><a href="doproduct?lb=2">小说类</a></td>
 				</tr>
 				<tr>
 					<td><a href="%">儿童读物</a></td>
