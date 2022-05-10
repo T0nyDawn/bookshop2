@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.book.entity.Product;
 import com.book.model.BookService;
+import com.mysql.cj.x.protobuf.MysqlxResultset.ContentType_BYTES;
 
 /**
  * Servlet implementation class DoProduct
@@ -42,11 +43,14 @@ public class DoProduct extends HttpServlet {
 		//每次都得加 ？？？ todo
     	request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
+		response.setHeader("Content-Type","text/html;charset=UTF-8");
+    	
+		//out=response.getWriter();
+		String cmd=request.getParameter("cmd");
+		//通过名称调用方法	java反射
 		
-    	// TODO Auto-generated method stub
-		//response.getWriter().append("Served-service at: ").append(request.getContextPath());
-		//PrintWriter out=response.getWriter();
-		//out.println("*********************");
+		
+		//Method method=this.getClass().getMethod(cmd, HttpServletRequest.class,HttpServletResponse.class);
 		
 		//(1)获取参数
 		String lb_str=request.getParameter("lb");//多个参数 *？ todo

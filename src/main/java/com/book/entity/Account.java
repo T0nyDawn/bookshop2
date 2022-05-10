@@ -1,4 +1,4 @@
-package com.book.dao;
+package com.book.entity;
 
 public class Account {
 	private String username;

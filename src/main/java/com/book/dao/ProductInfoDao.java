@@ -3,6 +3,7 @@ package com.book.dao;
 import java.util.List;
 
 import com.book.entity.ProductInfo;
+import com.core.DataBase;
 
 public class ProductInfoDao extends DataBase {
 //	private String prodid;

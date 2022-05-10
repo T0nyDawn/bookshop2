@@ -2,6 +2,9 @@ package com.book.dao;
 
 import java.util.List;
 
+import com.book.entity.Account;
+import com.core.DataBase;
+
 public class AccountDaoImpl extends DataBase implements AccountDao{
 
 	Account curAcc;
@@ -32,7 +35,7 @@ public class AccountDaoImpl extends DataBase implements AccountDao{
 		return this.curAcc;
 	}
 	@Override
-	public boolean Chklogin(String un, String pwd) {
+	public Account Chklogin(String un, String pwd) {
 		/**
 		ResultSet rs=Query("select * from account where username=?",un);
 		try {
@@ -59,7 +62,7 @@ public class AccountDaoImpl extends DataBase implements AccountDao{
 			if(!pwd.equals(acc.getPassword())){
 				throw new RuntimeException("密码错误!");
 			}
-			return true;
+			return acc;
 		}else{
 			//用户名错误
 			throw new RuntimeException("用户名错误!");

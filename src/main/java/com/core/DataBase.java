@@ -1,4 +1,4 @@
-package com.book.dao;
+package com.core;
 
 
 import java.lang.reflect.InvocationTargetException;
@@ -85,7 +85,7 @@ public class DataBase {
 		List<T> l= ResultSet2List(cls,rs);
 		return l;
 	}
-	@SuppressWarnings("deprecation")
+	
 	private <T> List<T> ResultSet2List(Class<T> cls, ResultSet rs) {
 		List<T> l=new ArrayList<T>();
 		//rs-->l
@@ -129,10 +129,10 @@ public class DataBase {
 			org.apache.commons.beanutils.BeanUtils.setProperty(o, colName, colValue);
 		} catch (IllegalAccessException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			;
 		} catch (InvocationTargetException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			;
 		}
 		
 	}
@@ -150,8 +150,10 @@ public class DataBase {
 	public static void main(String[] args)  {
 		//DataBase db=new DataBase();
 		//db.executeUpdate("insert into account(username,cnname,password) values(?,?,?)","ls","ÀúÊ·µÄ","123");
-		AccountDao accDao=new AccountDaoImpl();
-		accDao.Chklogin("zs", "123qq");
+		//AccountDao accDao=new AccountDaoImpl();
+		//Account acc=new AccountDaoImpl();
+		//accDao.Chklogin("zs", "123qq");
+		//System.out.println(acc.getUsername());
 	}
 
 }

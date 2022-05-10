@@ -3,6 +3,7 @@ package com.book.dao;
 import java.util.List;
 
 import com.book.entity.Product;
+import com.core.DataBase;
 //DAO SQLÓï¾äĞ´ÔÚÕâÀï
 public class ProductDao extends DataBase{
 	/**

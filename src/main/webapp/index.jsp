@@ -2,10 +2,25 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!-- 
+	获取成功登录的标记
 	if(!true){
 		to login.jsp
-}
+	}
  -->
+ 
+ <jsp:useBean id="loginbean" class="com.book.LoginBean" scope="session"></jsp:useBean>
+<%
+if(loginbean.getReturn_acc()==null){
+	//没走login逻辑，return_acc属性的值=null
+%>
+  <jsp:forward page="login.jsp">
+     <jsp:param value="1" name="a"/>
+  </jsp:forward> 
+<%
+}
+%>
+ 
+ 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,6 +47,7 @@
 
 <jsp:include page="title.jsp"></jsp:include>
 
+<!-- 内容start -->>
 <table width="800px" height="400px" align="center">
 	<tr>
 		<td width="200px" class="t_right_bg" valign="top">

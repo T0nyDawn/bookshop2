@@ -7,10 +7,40 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="chklogin.jsp" method="get">
+<%
+//if("1".equalsIgnoreCase(request.getParameter("a")))
+if(request.getParameter("a")!=null )
+{	
+%>
+	<font color="red">首页，必须先登录，后访问！</font>
+<%
+} 
+%>
+
+<%
+if(request.getParameter("b")!=null)
+{
+%>
+	<font color="red">用户名错误！</font>
+<%
+}
+%>	
+
+
+<%
+if(request.getParameter("c")!=null)
+{
+%>
+	<font color="red">密码错误！</font>
+<%
+}
+%>		
+	
+	<form action="login" method="post">
+	<!-- post方法可以传递中文，get方法无法传 -->
 		用户名：<input name="username"/><br/>
 		密码：<input name="password"/><br/>
-		<input type="submit" name="tj" value="Login" />
+		<input type="submit"  value="登录" />
 	</form>
 </body>
 </html>
