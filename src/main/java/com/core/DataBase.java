@@ -7,13 +7,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataBase {
-	private String  url="jdbc:mysql://127.0.0.1:3306/book?useSSL=false&serverTimezone=UTC&characterEncoding=utf8";
-	private String username="root";
-	private String password="022416";
+	public static String  url="jdbc:mysql://127.0.0.1:3306/book?useSSL=false&serverTimezone=UTC&characterEncoding=utf8";
+	public static String username="root";
+	public static String password="022416";
+	//private  String  url；
+	
 	//1-属性文件
 	//2-事务
 	//3-封装性,泛型、反射
 	
+	public static void setDbServer(String value) {
+		url="jdbc:mysql://"+value+"/book?useSSL=false&serverTimezone=UTC&characterEncoding=utf8";
+	}
 	private Connection cn=null;
 	public DataBase(){
 		try {

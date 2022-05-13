@@ -2,19 +2,21 @@ package com.book.control;
 
 import java.io.IOException;
 
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.book.entity.Account;
 import com.core.BaseController;
+import com.core.DataBase;
 
 /**
  * Servlet implementation class LoginController
  */
-@WebServlet("/login")
+//@WebServlet("/login")   // 注解  <url-pattern>/demo</url-pattern>是xml文件里的这种
 public class LoginController extends BaseController {
 	private static final long serialVersionUID = 1L;
        
@@ -42,6 +44,21 @@ public class LoginController extends BaseController {
 	public void changePassword(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		out.println("更改密码！！！");
 		
+	}
+	
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		DataBase.setDbServer(config.getInitParameter("DbUrl"));
+		//System.out.println(config.getInitParameter("DbUrl"));//DbUserName
+		//DataBase.url=config.getInitParameter("DbUrl");
+		DataBase.username=config.getInitParameter("DbUserName");//DbPassword
+		DataBase.password=config.getInitParameter("DbPassword");
+		
+		System.out.println(DataBase.url);
+		System.out.println(DataBase.username);
+		System.out.println(DataBase.password);
 	}
 
 }
