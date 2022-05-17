@@ -35,7 +35,10 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	
+	<!-- <error-page>
+		<error-code>404</error-code>
+		<location>404.jsp</location>
+	</error-page> -->
 </web-app>
 <!-- 动态web模块版本选择2.3 -->
 
