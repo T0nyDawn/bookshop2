@@ -7,6 +7,7 @@ import com.book.except.PasswordErrorException;
 import com.book.except.UserNameErrorException;
 
 public class LoginBean {
+	@SuppressWarnings("unused")
 	private  Account param_acc=null;
 	private  Account return_acc=null;
 	private  int  errCode=0;

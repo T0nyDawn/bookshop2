@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app id="WebApp_ID">
-	<display-name>B1</display-name>
+	<display-name>B2</display-name>
 	<servlet>
 		<servlet-name>Login</servlet-name>
-		<display-name>demo</display-name>
+		<display-name>Demo</display-name>
 		<description></description>
 		<servlet-class>com.book.control.LoginController</servlet-class>
 		<init-param>
@@ -12,32 +12,30 @@
 			<param-value>127.0.0.1:3306</param-value>
 			<description></description>
 		</init-param>
-		<init-param>
+		 <init-param>
 			<param-name>DbUserName</param-name>
 			<param-value>root</param-value>
 			<description></description>
 		</init-param>
 		<init-param>
 			<param-name>DbPassword</param-name>
-			<param-value>022416</param-value>
+			<param-value>root</param-value>
 			<description></description>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Login</servlet-name>
-		<url-pattern>/demo</url-pattern>   <!-- 代替之前的/login -->
-	</servlet-mapping>
+		<url-pattern>/demo</url-pattern>
+	</servlet-mapping> 
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
-		<welcome-file>index1.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 		<welcome-file>default.html</welcome-file>
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-	<error-page>
-		<error-code>404</error-code>
-		<location>404.jsp</location>
-	</error-page>
+	
 </web-app>
 <!-- 动态web模块版本选择2.3 -->
+

@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.book.entity.Product;
 import com.book.model.BookService;
-import com.mysql.cj.x.protobuf.MysqlxResultset.ContentType_BYTES;
 
 /**
  * Servlet implementation class DoProduct
@@ -29,7 +28,8 @@ public class DoProduct extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    private Product Request2Product(HttpServletRequest request) {
+    @SuppressWarnings("unused")
+	private Product Request2Product(HttpServletRequest request) {
     	return null;
     }
     
@@ -40,12 +40,13 @@ public class DoProduct extends HttpServlet {
     	return null;
     }
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//每次都得加 ？？？ todo
+		//每次都得加 ？？？ TODO
     	request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setHeader("Content-Type","text/html;charset=UTF-8");
     	
 		//out=response.getWriter();
+		@SuppressWarnings("unused")
 		String cmd=request.getParameter("cmd");
 		//通过名称调用方法	java反射
 		
@@ -58,6 +59,7 @@ public class DoProduct extends HttpServlet {
 		if(lb_str!=null) {
 			lb=Integer.parseInt(lb_str);
 		}
+		@SuppressWarnings("unused")
 		Product proc=Request2Entity(Product.class,request);
 		//(2)执行业务逻辑，调用Model--Service
 		//out.println("a="+a);

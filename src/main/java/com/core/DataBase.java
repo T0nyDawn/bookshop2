@@ -91,6 +91,7 @@ public class DataBase {
 		return l;
 	}
 	
+	@SuppressWarnings("deprecation")
 	private <T> List<T> ResultSet2List(Class<T> cls, ResultSet rs) {
 		List<T> l=new ArrayList<T>();
 		//rs-->l
