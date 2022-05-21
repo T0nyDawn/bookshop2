@@ -1,8 +1,8 @@
+<%@page import="java.util.*"%>
+<%@page import="com.book.entity.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<%@page import="com.book.control.CartController"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,28 +42,42 @@
 </style>
 </head>
 <body>
+${requestScope.errMsg}
+<%-- <%
+//out.println("["+request.getAttribute("errMsg")+"]");
+Object o=session.getAttribute("cart");
+List<CardItem> cart=(List<CardItem>)o;
+int i=0;
+int cs=cart.size();
+while(i<cs){
+	CardItem cur=cart.get(i);
+	
+	out.println(cur.getProductid());
+	out.println(cur.getProduct().getProdname());
+	out.println(cur.getSl());
+	out.println("<br/>");
+	i++;
+}
+%> --%>
 
- <jsp:include page="title.jsp"></jsp:include>
- <div  class="nr" >
+<div  class="nr" >
+<form action="">
 <table  align="center" class="tab" border="2";>
 	<tr height="20px">
 		<th width="100px">商品编号</th>
 		<th>商品名称</th>
-		<th>&nbsp;</th>
+		<th>数量</th>
 	</tr>
-	<c:forEach items="${requestScope.books}" var="cur_book">
+	<c:forEach items="${sessionScope.cart}" var="cur">
 	  <tr height="20px">
-		<td width="100px">${cur_book.prodid}</td>
-		<td>${cur_book.prodname}</td>
-		<td> <a href="cart?cmd=add2Cart&productid=${cur_book.prodid}">加入购物车</a> </td>
+		<td width="100px">${cur.productid}</td> 
+		<td>${cur.product.prodname}</td>
+		<td><input name="sl_${cur.productid}" value="${cur.sl}"> </td>
 	  </tr>
 	</c:forEach>
 <!-- 空白行 删除了 -->
 </table>
-<a href="cart?cmd=show2Cart">show Cart</a> <br/>
-<a href="cart.jsp">show Cart</a>
+</form>
 </div>
-<!-- 内容end -->
- <jsp:include page="bottom.jsp"></jsp:include>
 </body>
 </html>

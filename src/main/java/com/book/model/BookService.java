@@ -7,6 +7,9 @@ import com.book.entity.Product;
 //这里是业务的名称，不能出现SQL语句
 public class BookService {
 	private ProductDao dao = new ProductDao();
+	public Product getProductByLb(String id) {
+		return dao.getBookById(id);
+	}
 	public List<Product> getBookListByLb(int lb){
 		//dao.setLb(lb);
 		return dao.getBookList(lb);

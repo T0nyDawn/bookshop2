@@ -17,7 +17,7 @@ import com.core.DataBase;
 /**
  * Servlet implementation class LoginController
  */
-@WebServlet("/login")   // 注解  <url-pattern>/demo</url-pattern>是xml文件里的这种
+//@WebServlet("/login")   // 注解  <url-pattern>/demo</url-pattern>是xml文件里的这种
 public class LoginController extends BaseController {
 	private static final long serialVersionUID = 1L;
 
